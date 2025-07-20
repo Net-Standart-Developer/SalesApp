@@ -1,4 +1,3 @@
-
 using Back.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +9,8 @@ namespace Back
         {
             var builder = WebApplication.CreateBuilder(args);
             var configuration = builder.Configuration;
+
+            builder.Services.AddCors();
 
             //      DB_CONFIGURATION          //
             string host = configuration["POSTGRES_HOST"]!;
@@ -30,6 +31,13 @@ namespace Back
             {
                 app.MapOpenApi();
             }
+
+            app.UseCors(option =>
+            {
+                option.AllowAnyHeader();
+                option.AllowAnyMethod();
+                option.AllowAnyOrigin();
+            });
 
             app.UseAuthorization();
             app.MapControllers();
