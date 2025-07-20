@@ -1,4 +1,19 @@
 services:
+  back:
+    image: csdevcore/salesback
+    build: ./Back/Back/
+    ports:
+      - 8000:8000
+    environment:
+      ASPNETCORE_URLS: http://+:8000
+      ASPNETCORE_ENVIRONMENT: Development
+
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:? postgres password not set}
+      POSTGRES_USER: ${POSTGRES_USER:? postgres user not set}
+      POSTGRES_DB: ${POSTGRES_DB:? postgres database not set}
+    depends_on:
+      - db
+
   db:
     image: postgres
     restart: always
@@ -16,3 +31,5 @@ services:
     restart: always
     ports:
       - 8080:8080
+    depends_on:
+      - db
