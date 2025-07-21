@@ -30,7 +30,7 @@ namespace Back.Controllers
                 Name = vm.Name,
                 Description = vm.Description,
                 DateOfCreation = DateTime.UtcNow,
-                DateOfModifiction = DateTime.UtcNow
+                DateOfModification = DateTime.UtcNow
             };
 
             this.db.Categories.Add(newCategory);
@@ -50,7 +50,7 @@ namespace Back.Controllers
 
             category.Name = vm.Name;
             category.Description = vm.Description;
-            category.DateOfModifiction = DateTime.UtcNow;
+            category.DateOfModification = DateTime.UtcNow;
 
             await this.db.SaveChangesAsync();
             return Ok();

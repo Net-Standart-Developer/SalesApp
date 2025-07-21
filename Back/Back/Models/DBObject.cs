@@ -4,6 +4,6 @@
     {
         public Guid Id { get; set; }
         public DateTime DateOfCreation { get; set; }
-        public DateTime DateOfModifiction { get; set; }
+        public DateTime DateOfModification { get; set; }
     }
 }
