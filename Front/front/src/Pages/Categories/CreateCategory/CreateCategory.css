@@ -1,0 +1,11 @@
+.create-category{
+    margin: 0px 20%;
+}
+
+.create-name{
+    display: flex;
+}
+
+.create-description{
+    display: flex;
+}

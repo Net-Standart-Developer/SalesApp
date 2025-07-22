@@ -1,0 +1,42 @@
+.my_dropdown{
+    background-image: linear-gradient(top, var(--gradient-back-start), var(--gradient-back-end));
+    background-image: -o-linear-gradient(top, var(--gradient-back-start), var(--gradient-back-end));
+    background-image: -moz-linear-gradient(top, var(--gradient-back-start), var(--gradient-back-end));
+    background-image: -webkit-linear-gradient(top, var(--gradient-back-start), var(--gradient-back-end));
+    border: var(--main-border);
+    border-radius: var(--border-radius);
+
+    text-align: center;
+}
+
+.my_dropdown:hover{
+    border-color: var(--hover-border-color);
+    animation: text 3s 1;
+    color: var(--hover-text-color);
+}
+
+.my_menu{
+    border-radius: 5px;
+}
+
+.my_menu .Dropdown-option{
+    background-color: var(--white);
+}
+
+.my_menu .Dropdown-option:hover{
+    background-color: var(--main-back-color);
+}
+
+.my_menu .is-selected{
+    background-color: var(--main-back-color);
+}
+
+@keyframes text{
+    0% {
+        color: var(--main-text-color);
+    }
+
+    100% {
+        color: var(--hover-text-color);
+    }
+}
