@@ -60,7 +60,7 @@ export default class CreateProduct extends React.Component<any, IState>{
         });
 
         if(response.ok){
-            alert("Категория успешно создана")
+            alert("Продукт успешно создан")
             this.setState({navigatePath:"/products/"})
         }
         else{

@@ -1,4 +1,12 @@
 services:
+  front:
+    image: csdevcore/salesfront
+    build: ./Front/front/
+    ports:
+      - 3000:3000
+    depends_on:
+      - back
+
   back:
     image: csdevcore/salesback
     build: ./Back/Back/
